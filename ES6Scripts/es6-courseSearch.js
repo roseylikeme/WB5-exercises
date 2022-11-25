@@ -41,8 +41,12 @@ let courses = [
 // When does the PROG200 course start?
 
 function getStartDateOfCourse(_courseID){
-    let theCourseStartDate = courses.find(courseID).StartDate;
-    console.log(theCourseStartDate);
+    try {
+        let theCourseStartDate = courses.find(courseID).StartDate;
+        console.log(theCourseStartDate);
+    } catch(err){
+        console.log(`Could not find CourseID ${_courseID}`)
+    }
 
     function courseID(value){
         return(value.CourseId == _courseID)
