@@ -57,6 +57,21 @@ getStartDateOfCourse("PROG200");
 
 // What is the title of the PROJ500 course?
 
+function getTitleOfCourse(_courseID){
+    try {
+        let theCourseTitle = courses.find(courseID).Title;
+        console.log(theCourseTitle);
+    } catch(err){
+        console.log(`Could not find CourseID ${_courseID}`)
+    }
+
+    function courseID(value){
+        return(value.CourseId == _courseID)
+    }
+}
+
+getTitleOfCourse("PROJ500");
+
 // What are the titles of the courses that cost $50 or less?
 
 // What classes meet in "Classroom 1"?
