@@ -102,6 +102,21 @@ function getTitlesUnder(_fee){
     }
 }
 
-getTitlesUnder("50") // ANSWER
+// getTitlesUnder("50") // ANSWER
 
 // What classes meet in "Classroom 1"?
+
+function getCoursesInClassroom(_classroom){
+    try {
+        let arrayOfTitles = courses.filter(classroom);
+        console.log(arrayOfTitles)
+    } catch(err){
+        console.log(`Could Titles with fees less than ${_classroom}`)
+    }
+
+    function classroom(value){
+        return(value.Location == _classroom)
+    }
+}
+
+getCoursesInClassroom("Classroom 1"); // ANSWER
