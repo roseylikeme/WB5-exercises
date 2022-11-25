@@ -53,7 +53,7 @@ function getStartDateOfCourse(_courseID){
     }
 }
 
-getStartDateOfCourse("PROG200");
+// getStartDateOfCourse("PROG200");
 
 // What is the title of the PROJ500 course?
 
@@ -70,8 +70,38 @@ function getTitleOfCourse(_courseID){
     }
 }
 
-getTitleOfCourse("PROJ500");
+// getTitleOfCourse("PROJ500");
 
 // What are the titles of the courses that cost $50 or less?
+function getArrayOfTitlesUnder(_fee){
+    try {
+        let arrayOfTitles = courses.filter(underFee);
+        console.log(arrayOfTitles)
+    } catch(err){
+        console.log(`Could Titles with fees less than ${_fee}`)
+    }
+
+    function underFee(value){
+        return(Number(value.Fee) <= _fee)
+    }
+}
+
+// getArrayOfTitlesUnder("50"); // GRABS ARRAYS CORRECTLY BUT I JUST WANT TITLE
+
+function getTitlesUnder(_fee){
+    console.log(`Titles of Courses with Fees under $${_fee}:`)
+    // This is the filtered array of objects
+    let arrayOfTitles = courses.filter(underFee);
+    // Searches through each of the arrays and grabs the title from each one
+    for(let i=0; i<arrayOfTitles.length; i++){
+        console.log(arrayOfTitles[i].Title);
+    }
+    // The function we pass through the filter
+    function underFee(value){
+        return(Number(value.Fee) <= _fee) //Grab the fee values of the array that is less than input
+    }
+}
+
+getTitlesUnder("50") // ANSWER
 
 // What classes meet in "Classroom 1"?
